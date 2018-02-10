@@ -45,7 +45,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Crud.cs" />
+    <Compile Include="CrudDetail.cs" />
+    <Compile Include="CrudDetailDetail.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SubDetail.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\RepositoryPattern\RepositoryPattern.csproj">

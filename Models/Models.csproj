@@ -44,11 +44,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CrudDetailDetailModel.cs" />
+    <Compile Include="CrudDetailModel.cs" />
     <Compile Include="CrudModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SubDetailModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Entites\Entites.csproj">
+      <Project>{08B0ADB5-9301-473A-B457-5F246CEB5870}</Project>
+      <Name>Entites</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

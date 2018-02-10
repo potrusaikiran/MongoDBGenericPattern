@@ -31,24 +31,42 @@ namespace ApplicationService
         {
             try
             {
-                var sample = crudModel.Address.ToBsonDocument();
                 Crud crud = new Crud()
                 {
                     Id = ObjectId.GenerateNewId().ToString(),
-                    FirstName = crudModel.FirstName,
-                    MiddleName = crudModel.MiddleName,
-                    LastName = crudModel.LastName,
-                    Address = crudModel.Address
-                };
-                //var root = new BsonDocument();
-                //root.Add("name", "NamingConventions");
-                //var rootCategories = new BsonArray();
-                //rootCategories.Add(new BsonDocument
-                //                                                {
-                //                                                    { "standards", new BsonArray() }
-                //                                                 });
+                    Name = crudModel.Name,
+                    CrudDetail = new List<CrudDetail>()
+                    {
+                      new CrudDetail{  Id = ObjectId.GenerateNewId().ToString(),
+                                       CrudId = ObjectId.GenerateNewId().ToString(),
+                                       DetailName = "Detail1",
+                                            crudDetailDetail=new List<CrudDetailDetail>()
+                                                {
+                                                    new CrudDetailDetail{
+                                                                          Id = ObjectId.GenerateNewId().ToString(),
+                                                                          CrudDetailId = ObjectId.GenerateNewId().ToString(),
+                                                                          Name = "DetailDetail1",
+                                                                              subDetail=new List<SubDetail>()
+                                                                                                            {
+                                                                                  new SubDetail{
+                                                                                      Name="subdetail1"
+                                                                                               }
+                                                                                                          }
+                                                                     },
+                                                    new CrudDetailDetail{
+                                                                          Id = ObjectId.GenerateNewId().ToString(),
+                                                                          Name = "DetailDetail2",
+                                                                       }
+                                               }
+                                  },
+                      new CrudDetail{
+                        Id = ObjectId.GenerateNewId().ToString(),
+                        CrudId = ObjectId.GenerateNewId().ToString(),
+                        DetailName = "Detail2"
+                      }
+                    },
 
-                //root.Add("categories", rootCategories);
+                };
                 _curdService.Insert(crud);
             }
             catch (Exception e)

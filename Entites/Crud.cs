@@ -15,13 +15,8 @@ namespace Entites
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
         public string Id { get; set; }
-        public string FirstName { get; set; }
-        public string MiddleName { get; set; }
-        public string LastName { get; set; }
-        public string Salutation { get; set; }
-        //[BsonElement("Address")]
-        //[BsonSerializer(typeof(ObjectSerializer))]
-        public object Address { get; set; }
+        public string Name { get; set; }
+        public List<CrudDetail> CrudDetail { get; set; }
 
     }
 }
